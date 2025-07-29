@@ -12,5 +12,7 @@ const item2 = await createItem("hotwheels lamborghini", 39.99, 3);
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myWhishList, item2);
 
+await cartService.deleteItem(myCart, item1.name);
+
 console.log("Shopee Cart TOTAL IS:");
 await cartService.calculateTotal(myCart);
