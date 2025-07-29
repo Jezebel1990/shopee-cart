@@ -25,6 +25,12 @@ async function deleteItem(userCart, name) {
 
 // remover um item
 async function removeItem(userCart, index) {
+//transforma o indice do usuário, para o indice do backend
+   const deleteIndex = index - 1;
+
+    if(index >= 0 && index < userCart.length) {
+        userCart.splice(deleteIndex, 1);
+    }
 }
 
 
