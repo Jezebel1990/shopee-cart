@@ -19,4 +19,13 @@ await cartService.removeItem(myCart, item2);
 await cartService.displayCart(myCart);
 // await cartService.deleteItem(myCart, item1.name);
 
-await cartService.calculateTotal(myCart);
+// pega o total (tem que retornar número!)
+const total = await cartService.calculateTotal(myCart);
+
+// aplica o cupom e mostra o valor com desconto
+const couponResult = await cartService.applyCoupon(total, "DESCONTO15");
+
+console.log(
+  `\n💰 Total with coupon: R$ ${couponResult.total.toFixed(2)}`
+);
+
